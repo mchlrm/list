@@ -1,0 +1,257 @@
+/*for cct, address, tel no*/
+.header {
+	font-family: Arial;
+	color: maroon;
+	text-align: center;
+	font-size: 16px;
+}
+
+
+.tagaytay {
+  position: absolute; 
+  top: 10px; 
+  left: 100px; 
+  width: 150px;
+  height: 150px;
+
+}
+
+.cct {
+	position: absolute; 
+	top: 10px; 
+	right: 100px; 
+	width: 150px;
+	height: 150px;
+  }
+/*for a.y.*/
+.font {
+	font-family: Arial;
+	text-align: center;
+	font-size: 16px;
+	border-top: none;
+	border-left: none;
+}
+
+/*for numerical values*/
+.font1 {
+	font-family: Arial;
+	text-align: right;
+	font-size: 16px;
+	border-top: none;
+	border-right: none;
+	border-left: none;
+}
+
+.font2 {
+	font-family: Arial;
+	text-align: right;
+	font-size: 16px;
+	border-top: none;
+	border-right: none;
+	border-left: none;
+}
+
+.font3 {
+	border-top: none;
+	border-right: none;
+	border-bottom: none;
+}
+.font4 {
+	font-family: Arial;
+	text-align: right;
+	font-size: 16px;
+	border-top: none;
+	border-right: none;
+}
+
+/*name, program, date, stud.no..*/
+.table1 {
+	border-top: none;
+	border-bottom: none;
+	width: 1077;
+	height: 45;
+	margin-left: auto;
+  	margin-right: auto;
+	border-collapse: separate;
+	font-size: 16px;
+}
+
+/*section, course, and values*/
+.table2 {
+	width: 1077;
+	height: 45;
+	margin-left: auto;
+  	margin-right: auto;
+	border-collapse: separate;
+	font-size: 16px;
+}
+
+/*subjects, lec units, lab units..*/
+.table3 {
+	border-top: none;
+	border-bottom: none;
+	margin-left: auto;
+  	margin-right: auto;
+	border-collapse: separate;
+	width: 1077;
+	height: 20;
+	font-size: 16px;
+}
+
+/*billing information, scholarship grant..*/
+.table4 {
+	margin-left: auto;
+  	margin-right: auto;
+	border-collapse: separate;
+	height: 45;
+	font-size: 16px;
+	border-left: none;
+}
+
+.table5 {
+	border-bottom: none;
+	border-right: none;
+	border-top: none;
+	border-left: none;
+	font-size: 16px;
+	width: 470;
+}
+
+.table6 {
+	border-bottom: none;
+	border-right: none;
+	border-top: none;
+	border-left: none;
+	font-size: 16px;
+	width: 580;
+}
+
+.table7 {
+	border-top: none;
+	width: 1077;
+	margin-left: auto;
+  	margin-right: auto;
+	border-collapse: separate;
+	height: 45;
+	font-size: 16px;
+}
+/*FOR NAME, DATE, PROGRAM, MAJOR...*/
+.td {
+	font-family: Arial;
+	color: maroon;
+	border: 0;
+	font-size: 16px;
+}
+
+
+/*FOR NAME, DATE, PROGRAM VALUES..*/
+.tdValue {
+	font-family: Arial;
+	font-weight: bold;
+	color: black;
+	border: 0;
+	font-style: bold;
+	font-size: 16px;
+}
+
+/*FOR SECTION, COURSE CODE, DESCRIPTION, UNITS*/
+.td1  {
+	font-family: Arial;
+	color: maroon;
+	text-align: center;
+	border-left: none;
+	border-top: none;
+	line-height: 1;
+}
+
+/*FOR VALUES INSIDE*/
+.td2 {
+	font-family: Arial;
+	font-weight: bold;
+	font-style: bold;
+	color: black;
+	text-align: center;
+	border-top: none;
+	border-bottom: none;
+	border-left: none;
+	font-size: 16px;
+}
+
+/*FOR SCHOLARSHIP GRANT, ASSESEMENT OF FEES..*/
+.td3  {
+	font-family: Arial;
+	color: maroon;
+	border-left: none;
+	font-size: 16px;
+	border-left: none;
+}
+
+/*FOR FIRST PAYMENT, SECOND PAYMENT..*/
+.td4  {
+	font-family: Arial;
+	color: maroon;
+	border-left: none;
+	border-top: none;
+	border-bottom: none;
+	font-size: 16px;
+}
+
+.td5 {
+	font-family: Arial;
+	color: maroon;
+	border-left: none;
+	border-top: none;
+	font-size: 16px;
+}
+.td6  {
+	font-family: Arial;
+	color: maroon;
+	TEXT-ALIGN: RIGHT;
+	font-size: 16px;
+	border-top: none;
+}
+
+.td7  {
+	font-family: Arial;
+	color: maroon;
+	TEXT-ALIGN: center;
+	font-size: 16px;
+	border-right: none;
+	border-left: none;
+}
+
+.td8  {
+	border-top: none;
+	border-right: none;
+	border-left: none;
+	border-bottom: none;
+	font-family: Arial;
+	color: maroon;
+	TEXT-ALIGN: justify;
+	font-size: 16px;	
+}
+
+/*FOR REGISTRATION INFORMATION HEADER*/
+.th {
+	font-family: Arial;
+	color: white;
+	background-color: maroon;
+	text-align: center;
+	column-span: 4;
+	border: 0;
+	font-size: 16px;
+}
+
+/*FOR LEC UNITS, LAB UNITS, TOTAL CREDITED*/
+.tc {
+	font-family: Arial;
+	color: maroon;
+	background-color: yellow;
+	border-collapse: separate;
+	border-right: none;
+	border-left: none;
+	border-top: none;
+	line-height: 0.5;
+	font-size: 16px;
+}
+

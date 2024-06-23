@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="main-panel">
+            <div class="header d-flex justify-content-between align-items-center">
+                <h1 class="logo">List Of Activities</h1>
+                <nav class="nav">
+                    
+                </nav>
+                <div class="col-auto">
+                    <span class="large text log-in">home</span>
+                </div>
+            </div>
+            <!-- Product Details -->
+            <div class="product-details mt-4 p-4 rounded">
+                <!-- Card Deck -->
+                <div class="card-deck mt-4">
+                    <div class="card activity-card" data-toggle="modal" data-target="#activityModal1">
+                        <img src="act1.jpg" class="card-img-top" alt="Activity 1">
+                        <div class="card-body">
+                            <h5 class="card-title">Activity 1</h5>
+                            <p class="card-text">Curriculum Vitae</p>
+                        </div>
+                    </div>
+                    <a class="card activity-card" href="MENUfinal/index.html">
+                        <img src="act2.jpg" class="card-img-top" alt="Activity 2">
+                        <div class="card-body">
+                            <h5 class="card-title">Activity 2</h5>
+                            <p class="card-text box">Restaurant Menu</p>
+                        </div>
+                    </a>
+                    <div class="card activity-card" data-toggle="modal" data-target="#activityModal3">
+                        <img src="act3.jpg" class="card-img-top" alt="Activity 3">
+                        <div class="card-body">
+                            <h5 class="card-title">Activity 3</h5>
+                            <p class="card-text">Registration Form</p>
+                        </div>
+                    </div>
+                    <a class="card activity-card" href="SSStorefinal/index.html">
+                        <img src="act4.jpg" class="card-img-top" alt="Activity 4">
+                        <div class="card-body">
+                            <h5 class="card-title">Activity 4</h5>
+                            <p class="card-text">Sari-sari Store</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div><br></div>
+            <div class="d-flex justify-content-center">
+                        
+                <a class="navigate-button" onclick="navigateToOtherPage()">Log-out</a>
+            </div>
+        </div>
+        
+    </div>
+   
+
+    <!-- Modal for Activity 1 -->
+    <div class="modal fade" id="activityModal1" tabindex="-1" role="dialog" aria-labelledby="activityModalLabel1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document" style="width: 85%; max-width: 1300px;">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="activityModalLabel1">Activity 1 - Curriculum Vitae</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <iframe src="CVfinal/index.html" width="100%" height="500px" style="border: none;"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for Activity 3 -->
+    <div class="modal fade" id="activityModal3" tabindex="-1" role="dialog" aria-labelledby="activityModalLabel3" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document" style="width: 93%; max-width: 1300px;">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="activityModalLabel3">Activity 3 - Registration Form</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <iframe src="ROGfinal/index.html" width="100%" height="500px" style="border: none;"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Script Section -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+         function navigateToOtherPage() {
+ 
+ window.history.back();
+         }
+        $(document).ready(function() {
+            // Handle click on activity cards
+            $('.activity-card').click(function() {
+                var modalId = $(this).data('target');
+                if (modalId) {
+                    $(modalId).modal('show');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

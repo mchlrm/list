@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="try.css">
+    <script src="try.js"></script>
+    <title>Classy Threads</title>
+    
+</head>
+    
+<body>
+    
+    <header>
+        <a href="#" class="logo">
+            <img class =".img" src="logo.png" alt="Classy Threads">
+        </a>
+
+        <nav>
+            <a href="#jeans">Jeans</a>
+            <a href="#shirts">Shirts</a>
+            <a href="#perfumes">Perfumes</a>
+            <a href="#sandos">Sandos</a>
+            <a href="#toys">Toys</a>
+            <a href></a>
+            <a href></a>
+            <a href></a>
+            <a href></a>
+        
+            <a href></a>
+            <a href></a>
+            <a href></a>
+            <a href></a>
+			<a href></a>
+            <a href></a>
+            <a href></a>
+            <a href></a>
+            <a href></a>
+            <a href></a>
+            <a href></a>
+            <a href></a>
+            <a href></a>
+            <a href></a>
+            <a href></a>
+            <a href="#" onclick="openCart()">View Cart</a>
+			<a href="#" onclick="openStocks()">View Stocks</a>
+        </nav>
+
+    </header>
+
+<div id="formCart" class="popup-form-container1">
+    <span class="close-btn" onclick="closeCart()">&times;</span>
+    
+   <div class="cartTab">
+    <div class="cart" id="cartcontent">
+        <div id="cartitems"></div>
+        
+        <p>Select Discount: </p>
+        <form id="discountForm">
+            <input type="radio" id="senior" name="discount" value="0.2"><label for="senior">Senior (20%)</label><br>
+            <input type="radio" id="pwd" name="discount" value="0.3"><label for="pwd">PWD (30%)</label><br>
+            <input type="radio" id="student" name="discount" value="0.1"><label for="student">Student (10%)</label><br>
+            <input type="radio" id="none" name="discount" value="0"><label for="none">None</label><br>
+        </form>
+
+        <button onclick="calculateDiscount()" class="bAddtoCart1">Apply Discount</button>
+<p><b>Total: Php<span id="carttotal">0</span></b></p>
+        <form id="checkout" onsubmit="validateCheckout(event)">
+            <br>
+            <label for="amount">Enter amount</label>
+            <br>
+            <input type="text" id="amount" name="amount">
+            <br><br></form>
+            
+
+        <button onclick="validateCheckout()" class="bAddtoCart1">Checkout</button>
+    </div>
+        
+</div>
+</div>
+<div>
+    <button class="navigate-button " onclick="navigateToOtherPage()">Back to home</button>
+
+
+</div>
+<div id="formStocks" class="popup-form-container2">
+    <span class="close-btn" onclick="closeStocks()">&times;</span>
+    
+    <div class="cartTab">
+        <div class="cart" id="cartcontent">
+          <div id="cartitems"></div>
+			
+    
+    <div>
+    <div class="grid-container">
+        <div class="grid-item">
+            <img class ="products" src="jeans1.png" alt="jeans1">
+            <h3>Flared Jeans</h3>
+            <div class="price">Php 250.00</div>
+            <div id="container1" class="cont1">
+                <p>Stocks: <span id="j1-stock" class="stocks" >15</span></p></div>
+            <div class ="cont2">
+               
+                <button onclick="addStock('j1')" class="bAddtoCart" id="addStock"><b>Add Stocks</b></button>
+            </div>
+        </div>
+        <div class="grid-item">
+            <img class ="products" src="jeans2.png" alt="jeans1">
+            <h3>Wide Leg Jeans</h3>
+            <div class="price">Php 250.00</div>
+            <div id="container2" class="cont1">
+                <p>Stocks: <span id="j2-stock" class="stocks" >16</span></p></div>
+            <div class ="cont2">
+                
+                <button onclick="addStock('j2')" class="bAddtoCart" id="addStock"><b>Add Stocks</b></button>
+            </div>
+        </div>
+        <div class="grid-item">
+            <img class ="products" src="jeans3.png" alt="jeans1">
+            <h3>Straight Cut Jeans</h3>
+            <div class="price">Php 250.00</div>
+            <div id="container3" class="cont1">
+                <p>Stocks: <span id="j3-stock" class="stocks" >17</span></p></div>
+            <div class ="cont2">
+               
+                <button onclick="addStock('j3')" class="bAddtoCart" id="addStock"><b>Add Stocks</b></button>
+            </div>
+        </div>
+        <div class="grid-item">
+            <img class ="products" src="jeans4.png" alt="jeans1">
+            <h3>Skinny Jeans</h3>
+            <div class="price">Php 250.00</div>
+            <div id="container4" class="cont1">
+                <p>Stocks: <span id="j4-stock" class="stocks" >18</span></p></div>
+            <div class ="cont2">
+               
+                <button onclick="addStock('j4')" class="bAddtoCart" id="addStock"><b>Add Stocks</b></button>
+            </div>
+        </div>
+    </div></div>
+
+<div>
+    <div class="grid-container">
+        <div class="grid-item">
+            <img class ="products" src="shirt1.png" alt="shirt1">
+            <h3>Formal Shirt</h3>
+            <div class="price">Php 150.00</div>
+            <div id="container5" class="cont1">
+                <p>Stocks: <span id="s1-stock" class="stocks" >19</span></p></div>
+            <div class ="cont2">
+                
+                <button onclick="addStock('s1')" class="bAddtoCart" id="addStock"><b>Add Stocks</b></button>
+            </div>
+        </div>
+        <div class="grid-item">
+            <img class ="products" src="shirt2.png" alt="shirt2">
+            <h3>Striped Shirt</h3>
+            <div class="price">Php 200.00</div>
+            <div id="container6" class="cont1">
+                <p>Stocks: <span id="s2-stock" class="stocks" >20</span></p></div>
+            <div class ="cont2">
+               
+                <button onclick="addStock('s2')" class="bAddtoCart" id="addStock"><b>Add Stocks</b></button>
+            </div>
+        </div>
+        <div class="grid-item">
+            <img class ="products" src="shirt3.png" alt="shirt3">
+            <h3>Striped Polo Shirt</h3>
+            <div class="price">Php 200.00</div>
+            <div id="container7" class="cont1">
+                <p>Stocks: <span id="s3-stock" class="stocks" >10</span></p></div>
+            <div class ="cont2">
+               
+                <button onclick="addStock('s3')" class="bAddtoCart" id="addStock"><b>Add Stocks</b></button>
+            </div>
+        </div>
+        <div class="grid-item">
+            <img class ="products" src="shirt4.png" alt="shirt4">
+            <h3>Kids' Shirt</h3>
+            <div class="price">Php 100.00</div>
+            <div id="container8" class="cont1">
+                <p>Stocks: <span id="s4-stock" class="stocks" >11</span></p></div>
+            <div class ="cont2">
+               
+                <button onclick="addStock('s4')" class="bAddtoCart" id="addStock"><b>Add Stocks</b></button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div>
+
+    <div class="grid-container">
+        <div class="grid-item">
+            <img class ="products" src="perfume1.png" alt="perfume1">
+            <h3>Pure Grace</h3>
+            <div class="price">Php 1000.00</div>
+           <div id="container9" class="cont1">
+                <p>Stocks: <span id="p1-stock" class="stocks" >12</span></p></div>
+            <div class ="cont2">
+               
+                <button onclick="addStock('p1')" class="bAddtoCart" id="addStock"><b>Add Stocks</b></button>
+            </div>
+        </div>
+        <div class="grid-item">
+            <img class ="products" src="perfume2.png" alt="perfume2">
+            <h3>Jo Malone</h3>
+            <div class="price">Php 1000.00</div>
+            <div id="container10" class="cont1">
+                <p>Stocks: <span id="p2-stock" class="stocks" >13</span></p></div>
+            <div class ="cont2">
+               
+                <button onclick="addStock('p2')" class="bAddtoCart" id="addStock"><b>Add Stocks</b></button>
+            </div>
+        </div>
+        <div class="grid-item">
+            <img class ="products" src="perfume3.png" alt="perfume3">
+            <h3>Jean Patou</h3>
+            <div class="price">Php 1000.00</div>
+           <div id="container11" class="cont1">
+                <p>Stocks: <span id="p3-stock" class="stocks" >14</span></p></div>
+            <div class ="cont2">
+               
+                <button onclick="addStock('p3')" class="bAddtoCart" id="addStock"><b>Add Stocks</b></button>
+            </div>
+        </div>
+        <div class="grid-item">
+            <img class ="products" src="perfume4.png" alt="perfume4">
+            <h3>Miss Dior</h3>
+            <div class="price">Php 1000.00</div>
+            <div id="container12" class="cont1">
+                <p>Stocks: <span id="p4-stock" class="stocks" >9</span></p></div>
+            <div class ="cont2">
+              
+                <button onclick="addStock('p4')" class="bAddtoCart" id="addStock"><b>Add Stocks</b></button>
+            </div>
+        </div>
+    </div>
+        
+</div>
+
+<div>
+    <div class="grid-container">
+        <div class="grid-item">
+            <img class ="products" src="sando1.png" alt="sando1">
+            <h3>Kids' Rainbow Sando</h3>
+            <div class="price">Php 100.00</div>
+            <div id="container13" class="cont1">
+                <p>Stocks: <span id="sd1-stock" class="stocks" >3</span></p></div>
+            <div class ="cont2">
+                
+                <button onclick="addStock('sd1')" class="bAddtoCart" id="addStock"><b>Add Stocks</b></button>
+            </div>
+        </div>
+        <div class="grid-item">
+            <img class ="products" src="sando2.png" alt="sando2">
+            <h3>Lacy Sando</h3>
+            <div class="price">Php 100.00</div>
+            <div id="container14" class="cont1">
+                <p>Stocks: <span id="sd2-stock" class="stocks" >4</span></p></div>
+            <div class ="cont2">
+               
+                <button onclick="addStock('sd2')" class="bAddtoCart" id="addStock"><b>Add Stocks</b></button>
+            </div>
+        </div>
+        <div class="grid-item">
+            <img class ="products" src="sando3.png" alt="sando3">
+            <h3>Tie Dye Sando</h3>
+            <div class="price">Php 100.00</div>
+            <div id="container14" class="cont1">
+                <p>Stocks: <span id="sd3-stock" class="stocks" >2</span></p></div>
+            <div class ="cont2">
+                
+                <button onclick="addStock('sd3')" class="bAddtoCart" id="addStock"><b>Add Stocks</b></button>
+            </div>
+        </div>
+        <div class="grid-item">
+            <img class ="products" src="sando4.png" alt="sando4">
+            <h3>Summer Sando</h3>
+            <div class="price">Php 100.00</div>
+            <div id="container16" class="cont1">
+                <p>Stocks: <span id="sd4-stock" class="stocks" >21</span></p></div>
+            <div class ="cont2">
+                
+                <button onclick="addStock('sd4')" class="bAddtoCart" id="addStock"><b>Add Stocks</b></button>
+            </div>
+        </div>
+       </div> 
+</div>
+
+<div>
+
+    <div class="grid-container">
+        <div class="grid-item">
+            <img class ="products" src="toy1.png" alt="toy1">
+            <h3>Pop-it Toy</h3>
+            <div class="price">Php 80.00</div>
+            <div id="container17" class="cont1">
+                <p>Stocks: <span id="t1-stock" class="stocks" >5</span></p></div>
+            <div class ="cont2">
+               
+                <button onclick="addStock('t1')" class="bAddtoCart" id="addStock"><b>Add Stocks</b></button>
+            </div>
+        </div>
+        <div class="grid-item">
+            <img class ="products" src="toy2.png" alt="toy2">
+            <h3>Rabbit Stuffed Toy</h3>
+            <div class="price">Php 80.00</div>
+            <div id="container18" class="cont1">
+                <p>Stocks: <span id="t2-stock" class="stocks" >6</span></p></div>
+            <div class ="cont2">
+               
+                <button onclick="addStock('t2')" class="bAddtoCart" id="addStock"><b>Add Stocks</b></button>
+            </div>
+        </div>
+        <div class="grid-item">
+            <img class ="products" src="toy3.png" alt="toy3">
+            <h3>Fidget Toy</h3>
+            <div class="price">Php 80.00</div>
+            <div id="container19" class="cont1">
+                <p>Stocks: <span id="t3-stock" class="stocks" >7</span></p></div>
+            <div class ="cont2">
+                
+                <button onclick="addStock('t3')" class="bAddtoCart" id="addStock"><b>Add Stocks</b></button>
+            </div>
+        </div>
+        <div class="grid-item">
+            <img class ="products" src="toy4.png" alt="toy4">
+            <h3>Army Toy</h3>
+            <div class="price">Php 80.00</div>
+            <div id="container20" class="cont1">
+                <p>Stocks: <span id="t4-stock" class="stocks" >8</span></p></div>
+            <div class ="cont2">
+               
+                <button onclick="addStock('t4')" class="bAddtoCart" id="addStock"><b>Add Stocks</b></button>
+            </div>
+        </div>
+</div>
+</div>
+        </div>
+      </div>
+        
+</div>
+
+
+
+
+
+<section id="jeans">
+    
+    <h2 class="heading"> jeans </h2>
+    <div class="grid-container">
+        <div class="grid-item">
+            <img class ="products" src="jeans1.png" alt="jeans1">
+            <h3>Flared Jeans</h3>
+            <div class="price">Php 250.00</div>
+            <div id="container1" class="cont1">
+                <p>Stocks: <span id="j1-main-stock" class="stocks" >15</span></p></div>
+            <div class ="cont2">
+                <button onclick="add2Cart('Jeans 1', 'j1')" id="addToCartBtn" class="bAddtoCart"><b>Add to Cart</b></button>
+                
+            </div>
+        </div>
+        <div class="grid-item">
+            <img class ="products" src="jeans2.png" alt="jeans1">
+            <h3>Wide Leg Jeans</h3>
+            <div class="price">Php 250.00</div>
+            <div id="container2" class="cont1">
+                <p>Stocks: <span id="j2-main-stock" class="stocks" >16</span></p></div>
+            <div class ="cont2">
+                <button onclick="add2Cart('Jeans 2', 'j2')" id="addToCartBtn" class="bAddtoCart"><b>Add to Cart</b></button>
+                
+            </div>
+        </div>
+        <div class="grid-item">
+            <img class ="products" src="jeans3.png" alt="jeans1">
+            <h3>Straight Cut Jeans</h3>
+            <div class="price">Php 250.00</div>
+            <div id="container3" class="cont1">
+                <p>Stocks: <span id="j3-main-stock" class="stocks" >17</span></p></div>
+            <div class ="cont2">
+                <button onclick="add2Cart('Jeans 3', 'j3')" id="addToCartBtn" class="bAddtoCart"><b>Add to Cart</b></button>
+                
+            </div>
+        </div>
+        <div class="grid-item">
+            <img class ="products" src="jeans4.png" alt="jeans1">
+            <h3>Skinny Jeans</h3>
+            <div class="price">Php 250.00</div>
+            <div id="container4" class="cont1">
+                <p>Stocks: <span id="j4-main-stock" class="stocks" >18</span></p></div>
+            <div class ="cont2">
+                <button onclick="add2Cart('Jeans 4', 'j4')" id="addToCartBtn" class="bAddtoCart"><b>Add to Cart</b></button>
+               
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="shirts">
+    <h2 class="heading"> shirts </h2>
+    <div class="grid-container">
+        <div class="grid-item">
+            <img class ="products" src="shirt1.png" alt="shirt1">
+            <h3>Formal Shirt</h3>
+            <div class="price">Php 150.00</div>
+            <div id="container5" class="cont1">
+                <p>Stocks: <span id="s1-main-stock" class="stocks" >19</span></p></div>
+            <div class ="cont2">
+                <button onclick="add2Cart('Shirt 1', 's1')" id="addToCartBtn" class="bAddtoCart"><b>Add to Cart</b></button>
+                
+            </div>
+        </div>
+        <div class="grid-item">
+            <img class ="products" src="shirt2.png" alt="shirt2">
+            <h3>Striped Shirt</h3>
+            <div class="price">Php 200.00</div>
+            <div id="container6" class="cont1">
+                <p>Stocks: <span id="s2-main-stock" class="stocks" >20</span></p></div>
+            <div class ="cont2">
+                <button onclick="add2Cart('Shirt 2', 's2')" id="addToCartBtn" class="bAddtoCart"><b>Add to Cart</b></button>
+               
+            </div>
+        </div>
+        <div class="grid-item">
+            <img class ="products" src="shirt3.png" alt="shirt3">
+            <h3>Striped Polo Shirt</h3>
+            <div class="price">Php 200.00</div>
+            <div id="container7" class="cont1">
+                <p>Stocks: <span id="s3-main-stock" class="stocks" >10</span></p></div>
+            <div class ="cont2">
+                <button onclick="add2Cart('Shirt 3', 's3')" id="addToCartBtn" class="bAddtoCart"><b>Add to Cart</b></button>
+               
+            </div>
+        </div>
+        <div class="grid-item">
+            <img class ="products" src="shirt4.png" alt="shirt4">
+            <h3>Kids' Shirt</h3>
+            <div class="price">Php 100.00</div>
+            <div id="container8" class="cont1">
+                <p>Stocks: <span id="s4-main-stock" class="stocks" >11</span></p></div>
+            <div class ="cont2">
+                <button onclick="add2Cart('Shirt 4', 's4')" id="addToCartBtn" class="bAddtoCart"><b>Add to Cart</b></button>
+               
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="perfumes">
+    <h2 class="heading"> perfumes </h2>
+
+    <div class="grid-container">
+        <div class="grid-item">
+            <img class ="products" src="perfume1.png" alt="perfume1">
+            <h3>Pure Grace</h3>
+            <div class="price">Php 1000.00</div>
+           <div id="container9" class="cont1">
+                <p>Stocks: <span id="p1-main-stock" class="stocks" >12</span></p></div>
+            <div class ="cont2">
+                <button onclick="add2Cart('Perfume 1', 'p1')" id="addToCartBtn" class="bAddtoCart"><b>Add to Cart</b></button>
+                
+            </div>
+        </div>
+        <div class="grid-item">
+            <img class ="products" src="perfume2.png" alt="perfume2">
+            <h3>Jo Malone</h3>
+            <div class="price">Php 1000.00</div>
+            <div id="container10" class="cont1">
+                <p>Stocks: <span id="p2-main-stock" class="stocks" >13</span></p></div>
+            <div class ="cont2">
+                <button onclick="add2Cart('Perfume 2', 'p2')" id="addToCartBtn" class="bAddtoCart"><b>Add to Cart</b></button>
+                
+            </div>
+        </div>
+        <div class="grid-item">
+            <img class ="products" src="perfume3.png" alt="perfume3">
+            <h3>Jean Patou</h3>
+            <div class="price">Php 1000.00</div>
+           <div id="container11" class="cont1">
+                <p>Stocks: <span id="p3-main-stock" class="stocks" >14</span></p></div>
+            <div class ="cont2">
+                <button onclick="add2Cart('Perfume 3', 'p3')" id="addToCartBtn" class="bAddtoCart"><b>Add to Cart</b></button>
+                
+            </div>
+        </div>
+        <div class="grid-item">
+            <img class ="products" src="perfume4.png" alt="perfume4">
+            <h3>Miss Dior</h3>
+            <div class="price">Php 1000.00</div>
+            <div id="container12" class="cont1">
+                <p>Stocks: <span id="p4-main-stock" class="stocks" >9</span></p></div>
+            <div class ="cont2">
+                <button onclick="add2Cart('Perfume 4', 'p4')" id="addToCartBtn" class="bAddtoCart"><b>Add to Cart</b></button>
+               
+            </div>
+        </div>
+    </div>
+        
+</section>
+
+<section id="sandos">
+    <h2 class="heading"> sandos </h2>
+
+    <div class="grid-container">
+        <div class="grid-item">
+            <img class ="products" src="sando1.png" alt="sando1">
+            <h3>Kids' Rainbow Sando</h3>
+            <div class="price">Php 100.00</div>
+            <div id="container13" class="cont1">
+                <p>Stocks: <span id="sd1-main-stock" class="stocks" >3</span></p></div>
+            <div class ="cont2">
+                <button onclick="add2Cart('Sando 1', 'sd1')" id="addToCartBtn" class="bAddtoCart"><b>Add to Cart</b></button>
+                
+            </div>
+        </div>
+        <div class="grid-item">
+            <img class ="products" src="sando2.png" alt="sando2">
+            <h3>Lacy Sando</h3>
+            <div class="price">Php 100.00</div>
+            <div id="container14" class="cont1">
+                <p>Stocks: <span id="sd2-main-stock" class="stocks" >4</span></p></div>
+            <div class ="cont2">
+                <button onclick="add2Cart('Sando 2', 'sd2')" id="addToCartBtn" class="bAddtoCart"><b>Add to Cart</b></button>
+                
+            </div>
+        </div>
+        <div class="grid-item">
+            <img class ="products" src="sando3.png" alt="sando3">
+            <h3>Tie Dye Sando</h3>
+            <div class="price">Php 100.00</div>
+            <div id="container14" class="cont1">
+                <p>Stocks: <span id="sd3-main-stock" class="stocks" >2</span></p></div>
+            <div class ="cont2">
+                <button onclick="add2Cart('Sando 3', 'sd3')" id="addToCartBtn" class="bAddtoCart"><b>Add to Cart</b></button>
+               
+            </div>
+        </div>
+        <div class="grid-item">
+            <img class ="products" src="sando4.png" alt="sando4">
+            <h3>Summer Sando</h3>
+            <div class="price">Php 100.00</div>
+            <div id="container16" class="cont1">
+                <p>Stocks: <span id="sd4-main-stock" class="stocks" >21</span></p></div>
+            <div class ="cont2">
+                <button onclick="add2Cart('Sando 4', 'sd4')" id="addToCartBtn" class="bAddtoCart"><b>Add to Cart</b></button>
+               
+            </div>
+        </div>
+        
+</section>
+
+<section id="toys">
+    <h2 class="heading"> toys </h2>
+
+    <div class="grid-container">
+        <div class="grid-item">
+            <img class ="products" src="toy1.png" alt="toy1">
+            <h3>Pop-it Toy</h3>
+            <div class="price">Php 80.00</div>
+            <div id="container17" class="cont1">
+                <p>Stocks: <span id="t1-main-stock" class="stocks" >5</span></p></div>
+            <div class ="cont2">
+                <button onclick="add2Cart('Toy 1', 't1')" id="addToCartBtn" class="bAddtoCart"><b>Add to Cart</b></button>
+               
+            </div>
+        </div>
+        <div class="grid-item">
+            <img class ="products" src="toy2.png" alt="toy2">
+            <h3>Rabbit Stuffed Toy</h3>
+            <div class="price">Php 80.00</div>
+            <div id="container18" class="cont1">
+                <p>Stocks: <span id="t2-main-stock" class="stocks" >6</span></p></div>
+            <div class ="cont2">
+                <button onclick="add2Cart('Toy 2', 't2')" id="addToCartBtn" class="bAddtoCart"><b>Add to Cart</b></button>
+               
+            </div>
+        </div>
+        <div class="grid-item">
+            <img class ="products" src="toy3.png" alt="toy3">
+            <h3>Fidget Toy</h3>
+            <div class="price">Php 80.00</div>
+            <div id="container19" class="cont1">
+                <p>Stocks: <span id="t3-main-stock" class="stocks" >7</span></p></div>
+            <div class ="cont2">
+                <button onclick="add2Cart('Toy 3', 't3')" id="addToCartBtn" class="bAddtoCart"><b>Add to Cart</b></button>
+                
+            </div>
+        </div>
+        <div class="grid-item">
+            <img class ="products" src="toy4.png" alt="toy4">
+            <h3>Army Toy</h3>
+            <div class="price">Php 80.00</div>
+            <div id="container20" class="cont1">
+                <p>Stocks: <span id="t4-main-stock" class="stocks" >8</span></p></div>
+            <div class ="cont2">
+                <button onclick="add2Cart('Toy 4', 't4')" id="addToCartBtn" class="bAddtoCart"><b>Add to Cart</b></button>
+                
+            </div>
+        </div>
+</div>
+</section>
+
+
+</body>
+</html>

@@ -1,0 +1,371 @@
+<html>
+<head>
+    <link rel="stylesheet" href="try.css">
+    <title>3One</title>
+    
+</head>
+<body>
+    <script>
+        function navigateToOtherPage() {
+ 
+ window.history.back();
+}
+
+        function openForm() {
+            document.getElementById("popupForm").style.display = "block";
+            document.getElementById("overlay").style.display = "block";
+        }
+    
+        function closeForm() {
+            document.getElementById("popupForm").style.display = "none";
+            document.getElementById("overlay").style.display = "none";
+        }
+
+        var quantity;
+        var price=0;
+        function adobo(){
+            getQuan();
+            var t=80*parseInt(quantity);
+            price+=t;
+            getTotal();
+            document.getElementById("textarea").value+="Adobo				" +quantity+"		"+t+"\n";
+        }
+
+        function chicken(){
+            getQuan();
+            var t=70*parseInt(quantity);
+            price+=t;
+            getTotal();
+            document.getElementById("textarea").value+="Fried Chicken			" +quantity+"		"+t+"\n";
+        }
+
+        function tilapia(){
+            getQuan();
+            var t=70*parseInt(quantity);
+            price+=t;
+            getTotal();
+            document.getElementById("textarea").value+="Ginataang Tilapia		" +quantity+"		"+t+"\n";
+        }
+
+        function liempo(){
+            getQuan();
+            var t=110*parseInt(quantity);
+            price+=t;
+            getTotal();
+            document.getElementById("textarea").value+="Grilled Liempo		 	 " +quantity+"		"+t+"\n";
+        }
+
+        function kaldereta(){
+            getQuan();
+            var t=80*parseInt(quantity);
+            price+=t;
+            getTotal();
+            document.getElementById("textarea").value+="Kaldereta				" +quantity+"		"+t+"\n";
+        }
+
+		function chopsuey(){
+            getQuan();
+            var t=60*parseInt(quantity);
+            price+=t;
+            getTotal();
+            document.getElementById("textarea").value+="Chopsuey				" +quantity+"		"+t+"\n";
+        }
+		
+		function langka(){
+            getQuan();
+            var t=60*parseInt(quantity);
+            price+=t;
+            getTotal();
+            document.getElementById("textarea").value+="Ginataang Langka		" +quantity+"		"+t+"\n";
+        }
+		
+		function toge(){
+            getQuan();
+            var t=20*parseInt(quantity);
+            price+=t;
+            getTotal();
+            document.getElementById("textarea").value+="Lumpiang Toge			" +quantity+"		"+t+"\n";
+        }
+		
+		function graham(){
+            getQuan();
+            var t=15*parseInt(quantity);
+            price+=t;
+            getTotal();
+            document.getElementById("textarea").value+="Graham Balls			" +quantity+"		"+t+"\n";
+        }
+		
+		function flan(){
+            getQuan();
+            var t=90*parseInt(quantity);
+            price+=t;
+            getTotal();
+            document.getElementById("textarea").value+="Leche Flan				" +quantity+"		"+t+"\n";
+        }
+		
+		function icecream(){
+            getQuan();
+            var t=50*parseInt(quantity);
+            price+=t;
+            getTotal();
+            document.getElementById("textarea").value+="Strawberry Ice Cream 	" +quantity+"		"+t+"\n";
+        }
+		
+		function coke(){
+            getQuan();
+            var t=25*parseInt(quantity);
+            price+=t;
+            getTotal();
+            document.getElementById("textarea").value+="Coke					" +quantity+"		"+t+"\n";
+        }
+		
+		function hot(){
+            getQuan();
+            var t=30*parseInt(quantity);
+            price+=t;
+            getTotal();
+            document.getElementById("textarea").value+="Hot Coffee				" +quantity+"		"+t+"\n";
+        }
+		
+		function iced(){
+            getQuan();
+            var t=40*parseInt(quantity);
+            price+=t;
+            getTotal();
+            document.getElementById("textarea").value+="Iced Coffee			" +quantity+"		"+t+"\n";
+        }
+		
+		function garlic(){
+            getQuan();
+            var t=25*parseInt(quantity);
+            price+=t;
+            getTotal();
+            document.getElementById("textarea").value+="Garlic Fried Rice			" +quantity+"		"+t+"\n";
+        }
+		
+		function java(){
+            getQuan();
+            var t=25*parseInt(quantity);
+            price+=t;
+            getTotal();
+            document.getElementById("textarea").value+="Java Rice				" +quantity+"		"+t+"\n";
+        }
+		
+		function plain(){
+            getQuan();
+            var t=20*parseInt(quantity);
+            price+=t;
+            getTotal();
+            document.getElementById("textarea").value+="Plain Rice				" +quantity+"		"+t+"\n";
+        }
+		
+        function getQuan(){
+            do {
+                quantity = prompt('Enter quantity: (1 to 5 only)');
+            } while (quantity>5||quantity<1);
+        }
+        
+        function getTotal(){
+            document.getElementById("textfield").value=price;
+        }
+
+        function reset(){
+            document.getElementById("textarea").value="Name			  	Quantity	 Price\n";
+            document.getElementById("textfield").value="";
+            price=0;
+        }
+
+		function orderNow(){
+		alert("Your order has been sent to our kitchen. Please wait for the waiter to collect your payment.");
+		location.reload();
+		}
+    </script>
+    
+    <header>
+        <a href="#" class="logo">
+            <img src="3One.png" alt="3ONE">
+        </a>
+
+        <nav class="navbar">
+            <a href="#maindishes">Main Dishes</a>
+            <a href="#vegetables">Vegetables</a>
+            <a href="#desserts">Desserts</a>
+            <a href="#drinks">Drinks</a>
+            <a href="#addons">Add Ons</a>
+            <a href="#" onclick="openForm()">Order Now</a>
+        </nav>
+    </header>
+    <div>
+        <button class="navigate-button " onclick="navigateToOtherPage()">Back to home</button>
+    
+    
+    </div>
+    
+<div id="popupForm" class="popup-form-container">
+    <span class="close-btn" onclick="closeForm()">&times;</span>
+    
+    <div id="main" >
+        <h2 class="price">CHOOSE YOUR MAIN DISH</h2>
+        <input class="btn" type="button" id="adobo" name="button" value="Adobo" onclick="adobo()" >
+        <input class="btn" type="button" id="chicken" name="button" value="Fried Chicken" onclick="chicken()" >
+        <input class="btn" type="button" id="tilapia" name="button" value="Ginataang Tilapia" onclick="tilapia()" >
+        <input class="btn" type="button" id="liempo" name="button" value="Grilled Liempo" onclick="liempo()" >
+        <input class="btn" type="button" id="kaldereta" name="button" value="Kaldereta" onclick="kaldereta()" >
+    </div>
+    <div id="veg" >
+        <h2 class="price"><br>CHOOSE YOUR VEGETABLE</h2>
+		<input class="btn" type="button" id="chopsuey" name="button" value="Chopsuey" onclick="chopsuey()" >
+		<input class="btn" type="button" id="langka" name="button" value="Ginataang Langka" onclick="langka()" >
+		<input class="btn" type="button" id="toge" name="button" value="Lumpiang Toge" onclick="toge()" >
+        </div>
+    <div id="des">
+        <h2 class="price"><br>CHOOSE YOUR DESSERT</h2>
+		<input class="btn" type="button" id="grahamballs" name="button" value="Graham Balls" onclick="graham()" >
+		<input class="btn" type="button" id="flan" name="button" value="Leche Flan" onclick="flan()" >
+		<input class="btn" type="button" id="icecream" name="button" value="Strawberry Ice Cream" onclick="icecream()" >
+        </div>
+    <div id="dri">
+        <h2 class="price"> <br>CHOOSE YOUR DRINKS</h2>
+		<input class="btn" type="button" id="coke" name="button" value="Coke" onclick="coke()" >
+		<input class="btn" type="button" id="hotcoffee" name="button" value="Hot Coffee" onclick="hot()" >
+		<input class="btn" type="button" id="icedcoffee" name="button" value="Iced Coffee" onclick="iced()" >
+        </div>
+    <div id="add">
+        <h2 class="price"><br>CHOOSE YOUR ADD ONS</h2>
+		<input class="btn" type="button" id="garlic" name="button" value="Garlic Fried Rice" onclick="garlic()" >
+		<input class="btn" type="button" id="java" name="button" value="Java Rice" onclick="java()" >
+		<input class="btn" type="button" id="plain" name="button" value="Plain Rice" onclick="plain()" >
+        </div><br><br><br><br><br>
+    <div id="Gtotal">
+        <textarea class="tbTotal1" id="textarea" readonly>Name			  	Quantity	 Price
+
+</textarea>
+        <input type="reset" id="reset" name="reset" value="Reset" onclick="reset()" ><br><br><br><br><br>
+        <label class="price" for="textfield">Total: </label>
+        <input class="tbTotal" type="text" id="textfield" name="textfield" readonly> <br><br><br>
+		<input class="btn" type="button" id="ordernow" name="button" value="Order Now" onclick="orderNow()">
+    </div>
+    
+</div>
+
+<div id="overlay" class="overlay"></div>
+
+<section id="maindishes">
+    <h2 class="heading"> main dishes </h2>
+
+    <div class="box-container">
+        <div class="box">
+            <img class ="box-img" src="MainDish-Adobo.jpg" alt="Adobo">
+            <h3>Adobo</h3>
+            <div class="price">Php 80.00</div>
+        </div>
+        <div class="box">
+            <img class ="box-img" src="MainDish-FriedChicken.jpg" alt="Fried Chicken">
+            <h3>Fried Chicken</h3>
+            <div class="price">Php 70.00</div>
+        </div>
+        <div class="box">
+            <img class ="box-img" src="MainDish-GinataangTilapia.jpg" alt="Ginataang Tilapia">
+            <h3>Ginataang Tilapia</h3>
+            <div class="price">Php 70.00 </div>
+        </div>
+        <div class="box">
+            <img class ="box-img" src="MainDish-GrilledLiempo.jpg" alt="Grilled Liempo">
+            <h3>Grilled Liempo</h3>
+            <div class="price">Php 110.00</div>
+        </div>
+        <div class="box">
+            <img class ="box-img" src="MainDish-Kaldereta.jpg" alt="Kaldereta">
+            <h3>Kaldereta</h3>
+            <div class="price">Php 80.00</div>
+        </div>
+    </div>
+</section>
+
+<section id="vegetables">
+    <h2 class="heading"> vegetables </h2>
+    
+    <div class="box-container">
+        <div class="box">
+            <img class ="box-img" src="Vegetable-Chopsuey.jpg" alt="Chopsuey">
+            <h3>Chopsuey</h3>
+            <div class="price">Php 60.00</div>
+        </div>
+        <div class="box">
+            <img class ="box-img" src="Vegetable-GinataangLangka.jpg" alt="Ginataang Langka">
+            <h3>Ginataang Langka</h3>
+            <div class="price">Php 60.00</div>
+        </div>
+        <div class="box">
+            <img class ="box-img" src="Vegetable-LumpiangToge.jpg" alt="Lumpiang Toge">
+            <h3>Lumpiang Toge</h3>
+            <div class="price">Php 20.00</div>
+        </div>
+    </div>
+</section>
+
+<section id="desserts">
+    <h2 class="heading"> desserts </h2>
+    
+    <div class="box-container">
+        <div class="box">
+            <img class ="box-img" src="Dessert-GrahamBalls.jpg" alt="Graham Balls">
+            <h3>Graham Balls</h3>
+            <div class="price">Php 15.00</div>
+        </div>
+        <div class="box">
+            <img class ="box-img" src="Dessert-LecheFlan.jpg" alt="Leche Flan">
+            <h3>Leche Flan</h3>
+            <div class="price">Php 90.00</div>
+        </div>
+        <div class="box">
+            <img class ="box-img" src="Dessert-StrawberryIceCream.jpg" alt="StrawberryIceCream">
+            <h3>Strawberry Ice Cream</h3>
+            <div class="price">Php 50.00</div>
+        </div>
+</section>
+
+<section id="drinks">
+    <h2 class="heading"> drinks </h2>
+
+    <div class="box-container">
+        <div class="box">
+            <img class ="box-img" src="Drinks-Coke.jpeg" alt="Coke">
+            <h3>Coke</h3>
+            <div class="price">Php 25.00</div>
+        </div>
+        <div class="box">
+            <img class ="box-img" src="Drinks-HotCoffee.jpg" alt="Hot Coffee">
+            <h3>Hot Coffee</h3>
+            <div class="price">Php 30.00</div>
+        </div>
+        <div class="box">
+            <img class ="box-img" src="Drinks-IcedCoffee.jpg" alt="Iced Coffee">
+            <h3>Iced Coffee</h3>
+            <div class="price">Php 40.00</div>
+        </div>
+</section>
+
+<section id="addons">
+    <h2 class="heading"> add ons </h2>
+
+    <div class="box-container">
+        <div class="box">
+            <img class ="box-img" src="AddOns-GarlicFriedRice.jpg" alt="Garlic Fried Rice">
+            <h3>Garlic Fried Rice</h3>
+            <div class="price">Php 25.00</div>
+        </div>    
+        <div class="box">
+            <img class ="box-img" src="AddOns-JavaRice.jpg" alt="Java Rice">
+            <h3>Java Rice</h3>
+            <div class="price">Php 25.00</div>
+        </div>   
+        <div class="box">
+            <img class ="box-img" src="AddOns-PlainRice.jpeg" alt="Plain Rice">
+            <h3>Plain Rice</h3>
+            <div class="price">Php 20.00</div>
+        </div>   
+</section>
+
+</body>
+</html>

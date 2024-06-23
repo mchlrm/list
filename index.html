@@ -1,0 +1,118 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="main-panel">
+        <div class="row">
+            <div class="col">
+                <h1 class="logo">List Of Activities</h1>
+            </div>
+            <div class="col-auto">
+                <span class="large text log-in">log-in</span>
+            </div>
+        </div>
+<!-- Success dialog -->
+<div id="successDialog" class="alert alert-success mt-3" style="display: none;" role="alert">
+    You have successfully logged in.
+</div>
+<!-- Error dialog -->
+<div id="errorDialog" class="alert alert-danger mt-3" style="display: none;" role="alert">
+    Incorrect username or password.
+</div>
+<!-- Hint dialog -->
+<div id="hintDialog" class="alert alert-info mt-3" style="display: none;" role="alert">
+    The username and password is "input".
+</div>
+        <div class="product-details mt-4 rounded">
+
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="username" class="font">Username</label>
+                    <input type="text" class="form-control" id="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="password" class="font">Password</label>
+                    <input type="password" class="form-control" id="password" required>
+                </div>
+                <div class="form-check mb-3">
+                    <input type="checkbox" class="form-check-input" id="showPassword">
+                    <label class="form-check-label font" for="showPassword">Show Password</label>
+                </div>
+                <button class="navigate-button" id="loginButton" disabled>Login</button>
+            </form>
+            
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const username = document.getElementById('username');
+            const password = document.getElementById('password');
+            const loginButton = document.getElementById('loginButton');
+            const showPassword = document.getElementById('showPassword');
+            const successDialog = document.getElementById('successDialog');
+            const errorDialog = document.getElementById('errorDialog');
+            const hintDialog = document.getElementById('hintDialog');
+            let attemptCount = 0;
+
+            function validateForm() {
+                loginButton.disabled = !(username.value.trim() && password.value.trim());
+            }
+
+            function showSuccessDialog() {
+                successDialog.style.display = 'block';
+                setTimeout(() => {
+                    successDialog.style.display = 'none';
+                    window.location.href = 'login.html';
+                }, 2000);
+            }
+
+            function showErrorDialog() {
+                errorDialog.style.display = 'block';
+                setTimeout(() => {
+                    errorDialog.style.display = 'none';
+                }, 2000);
+
+            }
+
+            function showHintDialog() {
+                hintDialog.style.display = 'block';
+                setTimeout(() => {
+                    hintDialog.style.display = 'none';
+                }, 2000);
+            }
+
+            username.addEventListener('input', validateForm);
+            password.addEventListener('input', validateForm);
+
+            showPassword.addEventListener('change', function() {
+                password.type = showPassword.checked ? 'text' : 'password';
+            });
+
+            document.getElementById('loginForm').addEventListener('submit', function(event) {
+                event.preventDefault();
+                if (username.value.trim() === 'input' && password.value.trim() === 'input') {
+                    showSuccessDialog();
+                } else {
+                    attemptCount++;
+                    if (attemptCount >= 3) {
+                        showHintDialog();
+                    } else {
+                        showErrorDialog();
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>

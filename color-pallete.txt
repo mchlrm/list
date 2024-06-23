@@ -1,0 +1,5 @@
+--glaucous #667D9Cff;
+--french-gray #BFC5DBff;
+--thistle #CFB9C6ff;
+--pale-dogwood #FDCFC5ff;
+--cool-gray #9497B6ff;
